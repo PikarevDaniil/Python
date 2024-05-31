@@ -47,9 +47,9 @@ class enigma:
 
         return new_msg
 
-# add extra simbols to tha alphabet
+# add extra simbols to the alphabet
 alpha += ' '
-# generating settings for Enigme machine
+# generating settings for Enigma machine
 rot =tuple(sample(range(len(alpha)), len(alpha)) for _ in range(8))
 ref = tuple(sample(range(len(alpha)), len(alpha)))
 rot_pos = (0,) * len(rot)
