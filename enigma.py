@@ -27,7 +27,7 @@ class enigma:
         return char
     def round_rot(self):
         temp = int(''.join(map(str, self.rpos))) + 1
-        temp = tuple(map(int, tuple(str(temp))))
+        temp = tuple(map(int, tuple(str(temp))))[::-1]
         self.rpos = (0,) * (len(self.rpos) - len(temp)) + temp
     def in_pb(self, char):
         if char in self.pb:
@@ -47,15 +47,15 @@ class enigma:
 
         return new_msg
 
-# add extra simbols to the alphabet
+# add extra simbols to tha alphabet
 alpha += ' '
-# generating settings for Enigma machine
+# generating settings for Enigme machine
 rot =tuple(sample(range(len(alpha)), len(alpha)) for _ in range(8))
 ref = tuple(sample(range(len(alpha)), len(alpha)))
 rot_pos = (0,) * len(rot)
 plugs = tuple(sample(range(len(alpha)-10), len(alpha)-10))
 # our message
-msg = 'hurope i did it'
+msg = 'hello from enigma'
 # creating an Enigma machine 
 machine = enigma(alpha, rot, rot_pos, ref, plugs)
 # testing the machine
