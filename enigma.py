@@ -1,3 +1,5 @@
+# warning enigma alphabet must be divisible by 2
+# otherwise decrypting will be with errors
 from icecream import ic
 from string import ascii_lowercase as alpha
 from random import sample
@@ -51,7 +53,7 @@ class Enigma:
         return new_msg
 
 # add extra symbols to the alphabet
-alpha += ' '
+alpha += ' .'
 
 # Constants
 ROT = tuple(sample(range(len(alpha)), len(alpha)) for _ in range(1))
